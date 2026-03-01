@@ -1,0 +1,67 @@
+# EXPERIMENT 1  
+## State Preparation & Bloch Sphere Fundamentals  
+**IIT Delhi Quantum Computing Workshop**  
+**Participant: Sumit Dey Sarkar**
+
+---
+
+## 1. Objective
+
+To construct canonical single-qubit states and analyze their:
+
+- Complex probability amplitudes (α, β)
+- Measurement probabilities P(0), P(1)
+- Bloch sphere angles (θ, ϕ)
+- Bloch vector components (x, y, z)
+- Relative phase structure
+
+---
+
+## 2. Theoretical Framework
+
+A general single-qubit pure state is expressed as:
+
+|ψ⟩ = α|0⟩ + β|1⟩  
+
+with normalization condition:
+
+|α|² + |β|² = 1
+
+Bloch sphere parameterization:
+
+|ψ⟩ = cos(θ/2)|0⟩ + e^{iϕ} sin(θ/2)|1⟩
+
+Where:
+
+θ = 2 cos⁻¹(|α|)  
+ϕ = arg(β) − arg(α)
+
+Bloch vector components are expectation values of Pauli operators:
+
+x = ⟨σx⟩  
+y = ⟨σy⟩  
+z = ⟨σz⟩  
+
+---
+
+## 3. Methodology
+
+- Implemented using Python and Qiskit Statevector class
+- Computed probabilities from amplitude magnitudes
+- Extracted Bloch components via Pauli expectation values
+- Verified geometric consistency with theory
+
+---
+
+## 4. Observations
+
+|0⟩ and |1⟩ correspond to Bloch poles (z = ±1).  
+Superposition states |+⟩, |−⟩, |+i⟩, |-i⟩ lie on equator (z = 0).  
+
+Relative phase governs azimuthal rotation around equator.
+
+---
+
+## 5. Conclusion
+
+This experiment confirms that the Bloch sphere provides a complete geometric representation of pure single-qubit states and demonstrates that relative phase encodes physically distinguishable quantum information.

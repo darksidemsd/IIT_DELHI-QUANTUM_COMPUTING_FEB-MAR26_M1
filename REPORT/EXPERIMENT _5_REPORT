@@ -1,0 +1,36 @@
+# EXPERIMENT 5  
+## Global vs Relative Phase  
+**IIT Delhi Quantum Computing Workshop**  
+**Participant: Sumit Dey Sarkar**
+
+---
+
+## 1. Objective
+
+To distinguish physically observable relative phase from unobservable global phase.
+
+---
+
+## 2. Theory
+
+General state:
+
+|ψ⟩ = e^{iϕg}(cos(θ/2)|0⟩ + e^{iϕr} sin(θ/2)|1⟩)
+
+Global phase ϕg does not affect measurement.
+
+Relative phase ϕr determines Bloch longitude.
+
+---
+
+## 3. Observations
+
+- Changing global phase leaves probabilities invariant.
+- Relative phase rotates Bloch vector around Z-axis.
+- Interference curve follows sinusoidal dependence.
+
+---
+
+## 4. Conclusion
+
+Global phase has no physical consequence; relative phase encodes measurable interference effects.

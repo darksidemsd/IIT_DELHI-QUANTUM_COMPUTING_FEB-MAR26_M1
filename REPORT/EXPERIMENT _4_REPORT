@@ -1,0 +1,42 @@
+# EXPERIMENT 4  
+## Additivity and Non-Commutativity of Rotations  
+**IIT Delhi Quantum Computing Workshop**  
+**Participant: Sumit Dey Sarkar**
+
+---
+
+## 1. Objective
+
+To verify linear additivity of same-axis rotations and demonstrate non-commutativity of mixed rotations.
+
+---
+
+## 2. Methodology
+
+Compared:
+
+Rx(45°) + Rx(45°)  
+vs  
+Rx(90°)
+
+Evaluated equivalence using numerical statevector comparison.
+
+Also compared:
+
+Rx(90°) → Ry(90°)  
+vs  
+Ry(90°) → Rx(90°)
+
+---
+
+## 3. Observations
+
+- Same-axis rotations add linearly.
+- Mixed-axis rotations yield different final states.
+- Bloch trajectories differ for reversed sequences.
+
+---
+
+## 4. Conclusion
+
+Single-qubit rotations form a non-abelian SU(2) group. Order of operations matters fundamentally in quantum mechanics.

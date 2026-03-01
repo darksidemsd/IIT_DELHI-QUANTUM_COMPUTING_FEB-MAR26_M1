@@ -1,0 +1,53 @@
+# EXPERIMENT 2  
+## Single-Qubit Gates as Bloch Rotations  
+**IIT Delhi Quantum Computing Workshop**  
+**Participant: Sumit Dey Sarkar**
+
+---
+
+## 1. Objective
+
+To analyze single-qubit gates as unitary rotations on the Bloch sphere.
+
+---
+
+## 2. Theoretical Background
+
+Single-qubit gates correspond to SU(2) operators:
+
+X = σx  
+Y = σy  
+Z = σz  
+
+Rotation operators:
+
+Rx(θ) = e^{-iθσx/2}  
+Ry(θ) = e^{-iθσy/2}  
+Rz(θ) = e^{-iθσz/2}  
+
+---
+
+## 3. Methodology
+
+- Initialized state |0⟩
+- Applied gates sequentially
+- Simulated state evolution using Qiskit
+- Computed Bloch vectors from expectation values
+
+---
+
+## 4. Key Results
+
+- X gate flips population (north ↔ south pole)
+- Z gate adds phase without changing probabilities
+- H gate maps poles to equator
+- Rx(45°) applied twice equals Rx(90°)
+
+Non-commutativity observed:
+Rx Ry ≠ Ry Rx
+
+---
+
+## 5. Conclusion
+
+Single-qubit gates correspond directly to geometric rotations in Bloch representation. Same-axis rotations are additive; mixed-axis rotations are non-commutative.

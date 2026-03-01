@@ -1,0 +1,51 @@
+# EXPERIMENT 3  
+## Measurement Statistics & Confidence Intervals  
+**IIT Delhi Quantum Computing Workshop**  
+**Participant: Sumit Dey Sarkar**
+
+---
+
+## 1. Objective
+
+To analyze statistical convergence of quantum measurements using finite sampling.
+
+---
+
+## 2. Theoretical Background
+
+Measurement outcomes follow binomial distribution:
+
+k ~ Binomial(N, p)
+
+Estimated probability:
+
+p̂ = k/N
+
+Confidence intervals computed using Clopper–Pearson method.
+
+---
+
+## 3. Methodology
+
+- Fixed true probability p
+- Varied shot count N ∈ {200, 1000, 5000}
+- Computed 95% confidence intervals
+- Analyzed CI width scaling
+
+---
+
+## 4. Results
+
+CI width scales approximately as:
+
+1 / √N
+
+Maximum statistical variance occurs near p = 0.5.
+
+Coverage rate approaches 95% across repeated trials.
+
+---
+
+## 5. Conclusion
+
+Quantum measurement obeys classical binomial statistics. Increasing shot count reduces statistical uncertainty and improves estimator convergence.

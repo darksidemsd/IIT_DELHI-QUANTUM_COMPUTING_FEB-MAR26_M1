@@ -1,0 +1,49 @@
+# EXPERIMENT 6  
+## Quantum State Tomography  
+**IIT Delhi Quantum Computing Workshop**  
+**Participant: Sumit Dey Sarkar**
+
+---
+
+## 1. Objective
+
+To reconstruct an unknown single-qubit state using Pauli expectation values.
+
+---
+
+## 2. Theoretical Background
+
+Bloch vector:
+
+r = (⟨σx⟩, ⟨σy⟩, ⟨σz⟩)
+
+Density matrix:
+
+ρ = ½(I + r·σ)
+
+Fidelity:
+
+F = |⟨ψ_true | ψ_reconstructed⟩|²
+
+---
+
+## 3. Methodology
+
+- Prepared state with known (θ, ϕ)
+- Measured σx, σy, σz
+- Reconstructed Bloch vector
+- Calculated fidelity
+
+---
+
+## 4. Results
+
+- Residual errors decrease with shot count.
+- Fidelity approaches unity for large N.
+- Error scales approximately as 1/√N.
+
+---
+
+## 5. Conclusion
+
+Quantum state tomography successfully reconstructs pure qubit states from measurement data. Accuracy improves with increased sampling.

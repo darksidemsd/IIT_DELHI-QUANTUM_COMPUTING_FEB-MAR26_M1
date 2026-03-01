@@ -1,0 +1,298 @@
+# QUANTUM COMPUTING WORKSHOP FINAL REPORT  
+## IIT Delhi Quantum Computing Workshop  
+### Participant: Sumit Dey Sarkar  
+
+---
+
+# ABSTRACT
+
+This report presents a comprehensive technical investigation of single-qubit quantum systems performed during the IIT Delhi Quantum Computing Workshop. The experiments cover state preparation, Bloch sphere representation, single-qubit gate operations, statistical measurement theory, rotational additivity, phase behavior, and quantum state tomography.
+
+All simulations were performed using Python 3.x, NumPy, SciPy, Matplotlib, and Qiskit Statevector formalism. The experiments validate geometric, algebraic, and statistical foundations of quantum mechanics at the single-qubit level.
+
+---
+
+# EXPERIMENT 1  
+## State Preparation & Bloch Sphere Fundamentals
+
+## Objective
+
+To construct canonical single-qubit states and analyze:
+
+- Complex amplitudes (α, β)
+- Measurement probabilities
+- Bloch sphere parameters (θ, ϕ)
+- Bloch vector components (x, y, z)
+- Relative phase structure
+
+---
+
+## Theoretical Framework
+
+A pure qubit state is defined as:
+
+|ψ⟩ = α|0⟩ + β|1⟩  
+
+Normalization condition:
+
+|α|² + |β|² = 1  
+
+Bloch parameterization:
+
+|ψ⟩ = cos(θ/2)|0⟩ + e^{iϕ} sin(θ/2)|1⟩  
+
+Where:
+
+θ = 2 cos⁻¹(|α|)  
+ϕ = arg(β) − arg(α)  
+
+Bloch vector representation:
+
+x = ⟨σx⟩  
+y = ⟨σy⟩  
+z = ⟨σz⟩  
+
+---
+
+## States Analyzed
+
+- |0⟩
+- |1⟩
+- |+⟩
+- |−⟩
+- |+i⟩
+- |-i⟩
+
+---
+
+## Observations
+
+- |0⟩ → North pole (0,0,1)
+- |1⟩ → South pole (0,0,-1)
+- Superposition states lie on equator (z = 0)
+- Relative phase governs azimuthal angle ϕ
+- Measurement probabilities alone do not uniquely determine quantum state
+
+---
+
+## Conclusion
+
+The Bloch sphere provides a complete geometric representation of pure qubit states. Relative phase encodes physically distinguishable quantum information beyond measurement probabilities.
+
+---
+
+# EXPERIMENT 2  
+## Single-Qubit Gates as Rotations
+
+## Objective
+
+To analyze quantum gates as SU(2) rotational operators acting on the Bloch sphere.
+
+---
+
+## Theoretical Background
+
+Pauli operators:
+
+σx, σy, σz  
+
+Rotation operators:
+
+Rx(θ) = e^{-iθσx/2}  
+Ry(θ) = e^{-iθσy/2}  
+Rz(θ) = e^{-iθσz/2}  
+
+Hadamard gate performs composite rotation mapping Z-basis to X-basis.
+
+---
+
+## Key Results
+
+- X gate flips population (|0⟩ ↔ |1⟩)
+- Z gate adds phase without changing probabilities
+- H gate creates equal superposition
+- Two Rx(45°) rotations equal one Rx(90°)
+- Mixed rotations do not commute
+
+Rx Ry ≠ Ry Rx
+
+---
+
+## Conclusion
+
+Single-qubit gates correspond directly to geometric rotations in SU(2). Same-axis rotations are additive; mixed-axis rotations exhibit non-commutativity, reflecting fundamental quantum structure.
+
+---
+
+# EXPERIMENT 3  
+## Measurement & Statistical Sampling
+
+## Objective
+
+To study convergence of measurement statistics under finite sampling.
+
+---
+
+## Theoretical Basis
+
+Measurement follows binomial distribution:
+
+k ~ Binomial(N, p)
+
+Estimator:
+
+p̂ = k/N
+
+Confidence intervals computed using Clopper–Pearson method via Beta distribution.
+
+Standard error scales as:
+
+√[p(1−p)/N]
+
+---
+
+## Observations
+
+- Confidence interval width scales as 1/√N
+- Maximum uncertainty near p = 0.5
+- Estimated probability converges toward true p as N increases
+- Coverage rate approaches nominal 95% with repeated trials
+
+---
+
+## Conclusion
+
+Quantum measurement statistics obey classical binomial behavior. Increasing shot count reduces uncertainty and improves estimator stability.
+
+---
+
+# EXPERIMENT 4  
+## Additivity & Non-Commutativity of Rotations
+
+## Objective
+
+To verify rotational additivity and demonstrate non-commutativity.
+
+---
+
+## Methodology
+
+Compared:
+
+Rx(45°) + Rx(45°)  
+vs  
+Rx(90°)
+
+Also compared:
+
+Rx(90°) → Ry(90°)  
+vs  
+Ry(90°) → Rx(90°)
+
+---
+
+## Results
+
+- Same-axis rotations add linearly
+- Mixed-axis rotations yield distinct final states
+- Bloch trajectories differ depending on order
+
+---
+
+## Conclusion
+
+Single-qubit rotations form a non-abelian SU(2) group. Operator ordering fundamentally affects quantum evolution.
+
+---
+
+# EXPERIMENT 5  
+## Global vs Relative Phase
+
+## Objective
+
+To distinguish unobservable global phase from measurable relative phase.
+
+---
+
+## Theory
+
+General state:
+
+|ψ⟩ = e^{iϕg}(cos(θ/2)|0⟩ + e^{iϕr} sin(θ/2)|1⟩)
+
+Global phase ϕg does not affect observables.  
+Relative phase ϕr determines Bloch longitude.
+
+---
+
+## Findings
+
+- Global phase variation leaves probabilities invariant
+- Relative phase rotates Bloch vector around Z-axis
+- Interference curve follows sinusoidal dependence on ϕr
+
+---
+
+## Conclusion
+
+Global phase is physically irrelevant. Relative phase governs interference and geometric orientation.
+
+---
+
+# EXPERIMENT 6  
+## Quantum State Tomography
+
+## Objective
+
+To reconstruct an unknown qubit using Pauli expectation values.
+
+---
+
+## Theoretical Framework
+
+Bloch vector:
+
+r = (⟨σx⟩, ⟨σy⟩, ⟨σz⟩)
+
+Density matrix:
+
+ρ = ½(I + r·σ)
+
+Fidelity:
+
+F = |⟨ψ_true | ψ_reconstructed⟩|²
+
+---
+
+## Observations
+
+- Reconstruction error decreases with shot count
+- Residuals scale approximately as 1/√N
+- Fidelity approaches unity for large N
+
+---
+
+## Conclusion
+
+Quantum state tomography successfully reconstructs pure qubit states from measurement statistics. Accuracy improves with increased sampling.
+
+---
+
+# OVERALL CONCLUSION
+
+The workshop experiments collectively demonstrate:
+
+- Complete geometric representation of qubits
+- SU(2) rotational structure of quantum gates
+- Statistical nature of quantum measurement
+- Phase-dependent interference behavior
+- Non-commutative quantum operations
+- Accurate state reconstruction via tomography
+
+These experiments provide a rigorous foundation for understanding quantum computation at the single-qubit level.
+
+---
+
+**End of Report**  
+IIT Delhi Quantum Computing Workshop  
+Participant: Sumit Dey Sarkar
